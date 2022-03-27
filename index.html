@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="build/style.css">
+	<title></title>
+</head>
+<body>
+	<!-- Item List Section -->
+	<div class="wrapper">	
+		<div class="logo" role="banner">
+			<span>CUSTOM TREEVIEW</span>
+		</div>
+		<nav class="nav__treeList">
+		</nav>
+		
+		<!-- content -->
+		<div class="content">
+			<h1 class="toolbar__header">TOOLBAR</h1>
+			<div class="toolbar">
+				<div class="toolbar-tabs" role="tablist">
+					<button role="tab" aria-selected="true" aria-controls="panel-add" class="tool-tab" id="add-tab">Add Product</button>
+					<button role="tab" aria-selected="false" aria-controls="panel-edit" class="tool-tab" id="edit-tab">Edit Product</button>
+					<!-- <button role="tab" aria-selected="false" aria-controls="panel-report" class="tool-tab" id="report-tab">Report</button> -->
+				</div>
+				<div class="tool-content">
+					<div id="panel-add"  role="tabpanel" aria-labelledby="add-tab">
+						<form class="add-todo-form">
+							<div class="form-group form-add">
+								<label for="title">Name:</label>
+								<input 
+								id="title"
+								type="text"
+								class="form-control"
+								name="title"
+								placeholder="Product name..."
+								/>
+								<label for="parentSelect">Choose parent:</label>
+								<select name="parentSelect" id="add_product-parent_select">
+								</select>
+							</div>
+							<div class="form-buttons">
+								<button id="addItem" type="submit" class="button submit-button">Add</button>
+							</div>
+						</form>
+					</div>
+					<!-- Tool content -->
+					<div id="panel-edit" role="tabpanel" aria-labelledby="edit-tab" class="hidden">
+						<form class="edit-todo-form">
+							<div class="form-group form-title">
+								<label for="parentSelect">Choose item:</label>
+								<select name="itemSelect" id="edit_product-item_select">
+								</select>
+								<label for="title">Rename:</label>
+								<input 
+								id="title"
+								type="text"
+								class="form-control"
+								name="title"
+								placeholder="Type name of the new item"
+								/>
+							</div>
+							<div class="form-buttons">
+								<button  id="editItem"type="submit" class="button submit-button">Edit</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script src="assets/scripts/itemsArray.js"></script>
+<script src="assets/scripts/toolbar.js" type="module"></script>
+<script src="assets/scripts/itemList.js"></script>
+</body>
+</html>
+		
+		<!-- Main Wrapper -->
