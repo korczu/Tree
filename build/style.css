@@ -95,6 +95,7 @@
     background-color: var(--bg-dark-1);
     border-right: 1px solid var(--brand-bright);
     overflow-y:auto;
+    padding-bottom: 30px;
   }
   
   .nav__treeList ul {
@@ -206,7 +207,6 @@
     color: rgba(255, 255, 255, 0.9);
   }
   
-  /* Product details */
   .content {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -223,7 +223,6 @@
   .toolbar__header {
     -ms-flex-item-align: center;
         align-self: center;
-    /* padding-bottom: 15px; */
     letter-spacing: 0.1em;
     font-weight: var(--light);
     color:rgba(255, 255, 255, 0.6);
@@ -368,3 +367,27 @@
         -webkit-box-shadow: 0px 0px 3px 0px var(--brand-bright-opacity);
                 box-shadow: 0px 0px 3px 0px var(--brand-bright-opacity);
     }
+
+    /* custo scrollbar */
+    /* width */
+::-webkit-scrollbar {
+    width: 7px;
+
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: var(--bg-dark-1);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--brand-bright-opacity);
+    border-radius: 50px;
+    border: 3px solid var(--bg-dark-1);
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--brand-bright);
+  }

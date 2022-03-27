@@ -12,7 +12,7 @@ const inputWarn = document.createElement('p');
 
 function populateOption(items){
     const itemOptions = items.map(item => 
-        `<option dataset-itemid=${item.id}>${item.title}</option>`).join('');
+        `<option style="background-color:rgba(0,0,0,0.8)"dataset-itemid=${item.id}>${item.title}</option>`).join('');
         parentSelector.innerHTML = itemOptions;
         itemSelect.innerHTML = itemOptions;
 }
