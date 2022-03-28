@@ -1,4 +1,6 @@
-import { items } from "./itemsArray.js";
+import { ITEMS } from "./index.js";
+import { addToLocalStorage } from "./utility.js";
+
 const itemList = document.querySelector(".nav__treeList");
 
 export function populateTree(itemsArray){
@@ -13,7 +15,7 @@ export function populateTree(itemsArray){
     // if there is no element in accumulator, push first object wchich ID is bigger then 0
     function countParents(accumulator, current) {
         if (accumulator.length === 0 ) {
-            accumulator.push(items.find(component => component.parentid > 0));
+            accumulator.push(ITEMS.find(component => component.parentid > 0));
         }
         else {
             if (!(accumulator.find(component => (component.parentid  === current.parentid)))&& current.parentid > 0){
@@ -28,7 +30,7 @@ export function populateTree(itemsArray){
     function createChildrensArray() {
         let  childrensArray = [];
         for (let i = 0; i < itemsWithChildrenAmount; i++) {
-            childrensArray[i] = items.filter(component => {
+            childrensArray[i] = ITEMS.filter(component => {
                 const currentId = component.parentid;
                 return currentId === itemsWithChildrenID[i];
             })
@@ -38,7 +40,7 @@ export function populateTree(itemsArray){
     
     // append children (object) to parent (object), and remove from rawComponent array
     function appenChildrensToParent(){
-        return items
+        return ITEMS
         .map(component => {
             if (itemsWithChildrenID
             .find(parentID => parentID === component.id)){
@@ -84,7 +86,7 @@ export function populateTree(itemsArray){
         })
         return nestedNode;
     }
-    
+    addToLocalStorage('items',ITEMS);
     itemList.innerHTML = tree;
 }
     

@@ -20,3 +20,19 @@ export function tabSwitcher(tabSection){
     //Add event listener handler to each tab
     tabs.forEach(tab => tab.addEventListener("click", handleTabClick))
 }
+
+ // add data into local Storage
+ export function addToLocalStorage(key,data){
+    if(!(typeof key === "string") || (key === '')){
+         throw Error('Key must contain a string')
+    }
+    const dataJSON = JSON.stringify(data)
+    localStorage.setItem(key,dataJSON)
+ }
+
+ //load from local Storage
+ export function loadFromLocalStorage(key){
+  const data = localStorage.getItem(key);
+  if(!key) throw Error('There is no ' + key + ' in localStorage')
+    return JSON.parse(data);
+ }
