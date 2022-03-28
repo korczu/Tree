@@ -1,5 +1,4 @@
-
- const items = [
+export const items = [
     {
         parentid: 0, 
         id: 0, 

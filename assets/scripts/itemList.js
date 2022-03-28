@@ -1,6 +1,7 @@
+import { items } from "./itemsArray.js";
 const itemList = document.querySelector(".nav__treeList");
 
-function populateTree(itemsArray){
+export function populateTree(itemsArray){
     const itemsWithChildrenID = itemsArray.reduce(countParents, []).map(parent => parent.parentid);
     const itemsWithChildrenAmount = itemsArray.reduce(countParents, []).length;
     const grupedChildrens = createChildrensArray();
@@ -98,5 +99,4 @@ function expandItem(item){
     .map( component =>  component.id === parseInt(item.dataset.itemid) && (component.expanded = !component.expanded));
     populateTree(items);
 }
-    
-populateTree(items);
+
